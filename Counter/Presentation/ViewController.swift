@@ -13,20 +13,20 @@ class ViewController: UIViewController {
         case plus, minus, error, clear
     }
     
-    @IBOutlet weak var historyText: UITextView!
-    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet private weak var historyText: UITextView!
+    @IBOutlet private weak var counterLabel: UILabel!
     
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var minusButton: UIButton!
+    @IBOutlet private weak var clearButton: UIButton!
     
     
-    @IBAction func plusButtonTap(_ sender: Any) {
+    @IBAction private func plusButtonTap(_ sender: Any) {
         counter += 1
         addTextToHistoryText(for: .plus)
     }
     
-    @IBAction func minusButtonTap(_ sender: Any) {
+    @IBAction private func minusButtonTap(_ sender: Any) {
         guard counter > 0 else {
             addTextToHistoryText(for: .error)
             return
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         addTextToHistoryText(for: .minus)
     }
     
-    @IBAction func clearButtonTap(_ sender: Any) {
+    @IBAction private func clearButtonTap(_ sender: Any) {
         counter = 0
         addTextToHistoryText(for: .clear)
     }
